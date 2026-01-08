@@ -56,7 +56,10 @@ ROOT_URLCONF = "fotoblog.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            # Ajouter pour specifier a django qu'il y a des gabarits dans le repertoire 'templates' situee a lasource du projet
+            BASE_DIR.joinpath("templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -104,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
+# Configuration de la langue en français pour l'application
 LANGUAGE_CODE = "fr-fr"
 
 TIME_ZONE = "UTC"
@@ -117,4 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# Utilisation du modèle User personnalisé défini dans l'application authentication
 AUTH_USER_MODEL = "authentication.User"
+
+# URL de redirection pour la connexion des utilisateurs
+LOGIN_URL = "login"

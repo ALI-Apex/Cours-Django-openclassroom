@@ -1,3 +1,4 @@
+# Configuration de Commitizen pour les commits conventionnels
 ---
 commitizen:
   major_version_zero: true
