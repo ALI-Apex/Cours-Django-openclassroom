@@ -127,3 +127,7 @@ AUTH_USER_MODEL = "authentication.User"
 
 # URL de redirection pour la connexion des utilisateurs
 LOGIN_URL = "login"
+
+# URL de redirection pour une vue generique
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = LOGIN_URL

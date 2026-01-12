@@ -30,7 +30,10 @@
         {% endcomment %}
         {% if user.is_authenticated %}
             <p>Vous etes connecter en tant que {{ request.user }}.
-                <a href="{% url 'logout' %}" >Se deconnecter</a>
+                <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Se deconnecter</button>
+                </form>
             </p>
         {% endif %}
 
